@@ -25,7 +25,7 @@ bot.on("callback_query", function (query) {
         queries[query.id] = query;
 
 // Ссылка GitHub Pages на основой код игры
-        let gameurl = "https://munchkin-game.github.io/mk-game-test/";
+        let gameurl = "https://munchkin-game.github.io/sushi-game-main/";
         bot.answerCallbackQuery({
             callback_query_id: query.id,
             url: gameurl
