@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const TelegramBot = require("node-telegram-bot-api");
+
 // надо исправить на токен бота самого главного
 const TOKEN = "5587543963:AAFZizEfYIF3lWv6ID31AJZ6TZwYJxig3dU";
 const server = express();
@@ -13,8 +14,8 @@ const port = process.env.PORT || 5000;
 const gameName = "short_name_for_your_game";
 const queries = {};
 
-// надо поменять на имя корневой папки
-server.use(express.static(path.join(__dirname, 'test project pacmen game')));
+// надо поменять на имя корневой папки в которой находится этот файл 
+server.use(express.static(path.join(__dirname, 'mk-game-test-index')));
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot implements a T-Rex jumping game. Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.on("callback_query", function (query) {
@@ -23,7 +24,7 @@ bot.on("callback_query", function (query) {
     } else {
         queries[query.id] = query;
 
-// надо поменять на ссылку pages в организации
+// надо поменять на ссылку pages саму игру в организации
         let gameurl = "https://munchkin-game.github.io/mk-game-test/";
         // let gameurl = "https://maxizhukov.github.io/telegram_game_front/";
         bot.answerCallbackQuery({
