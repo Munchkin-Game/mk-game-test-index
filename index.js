@@ -26,7 +26,6 @@ bot.on("callback_query", function (query) {
 
 // надо поменять на ссылку pages саму игру в организации
         let gameurl = "https://munchkin-game.github.io/mk-game-test/";
-        // let gameurl = "https://maxizhukov.github.io/telegram_game_front/";
         bot.answerCallbackQuery({
             callback_query_id: query.id,
             url: gameurl
